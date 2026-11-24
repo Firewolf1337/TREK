@@ -11,6 +11,7 @@ import MListsTab from './MListsTab'
 import MRoadtripTab from '../roadtrip/MRoadtripTab'
 import MJourneyDetail from '../../journey/MJourneyDetail'
 import PluginFrame from '../../../../components/Plugins/PluginFrame'
+import TripDescriptionPanel from '../../../../components/Trips/TripDescriptionPanel'
 
 // The desktop's tour editor, map stage included: loaded the first time a large screen opens the tab.
 const MTourWorkspace = lazyWithRetry(() => import('../tours/MTourWorkspace'))
@@ -50,6 +51,12 @@ export default function MTripTabPanel({ planner, shell, tab }: MTripTabPanelProp
     )
   }
   switch (tab) {
+    case 'beschreibung':
+      return (
+        <TabScroller>
+          <TripDescriptionPanel trip={planner.trip} canEdit={planner.can('trip_edit', planner.trip)} onSave={planner.saveTrip} />
+        </TabScroller>
+      )
     case 'transports':
       return <MTransportsTab planner={planner} shell={shell} />
     case 'buchungen':

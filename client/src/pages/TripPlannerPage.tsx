@@ -38,7 +38,7 @@ import { useBookingExpenseEditor } from './tripPlanner/useBookingExpenseEditor'
 import { applyTripCoverUpdate } from './tripPlanner/tripCover'
 import { latestReservation } from './tripPlanner/transportEditorOpeners'
 import {
-  ReservationsPanel, FileManager, CostsPanel, ExpenseModal, CollabPanel,
+  TripDescriptionPanel, ReservationsPanel, FileManager, CostsPanel, ExpenseModal, CollabPanel,
   RoadtripSidebar, RoadtripCorridorPanel, RoadtripLimitsCard, RoadtripStopPopup, RoadtripStayModal, RoadtripTrackModal,
   TourWorkspaceRail, TourPlannerToursRail, TransportModal, TripJournalPanel,
 } from './tripPlanner/plannerLazy'
@@ -262,6 +262,14 @@ function TripPlannerPageDesktop(): React.ReactElement | null {
         {/* Plugin validation/warning contributions (#1429) — navbar chips for
             plugins with a tab here, floating bottom overlay for the rest. */}
         <TripWarningsBanner tripId={tripId} onOpenPluginTab={(pid) => handleTabChange(`plugin:${pid}`)} />
+
+        {activeTab === 'beschreibung' && (
+          <div style={{ height: '100%', width: '100%', overflowY: 'auto', overscrollBehavior: 'contain', paddingInline: 28, paddingBottom: 'var(--bottom-nav-h)' }} className="max-md:!px-4">
+            <LazyPanel id="beschreibung">
+              <TripDescriptionPanel trip={trip} canEdit={can('trip_edit', trip)} onSave={saveTrip} />
+            </LazyPanel>
+          </div>
+        )}
 
         {activeTab === 'plan' && (
           <div style={{ position: 'absolute', inset: 0 }}>

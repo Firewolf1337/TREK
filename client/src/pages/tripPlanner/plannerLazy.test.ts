@@ -25,8 +25,10 @@ vi.mock('../../components/Tours/planner/TourPlannerPanels', () => ({
 }))
 vi.mock('../../components/Planner/TransportModal', () => ({ TransportModal: label('transport modal') }))
 vi.mock('./TripJournalPanel', () => ({ default: label('trip journal panel') }))
+vi.mock('../../components/Trips/TripDescriptionPanel', () => ({ default: label('trip description panel') }))
 
 const cases: Array<[keyof typeof lazy, string]> = [
+  ['TripDescriptionPanel', 'trip description panel'],
   ['ReservationsPanel', 'reservations panel'],
   ['PackingListPanel', 'packing list panel'],
   ['TodoListPanel', 'todo list panel'],
