@@ -6,6 +6,7 @@ import { lazyWithRetry } from '../../utils/lazyWithRetry'
 //
 // PluginFrame stays static on purpose: DayDetailPanel and PlaceInspector import it
 // too and both belong to the plan tab, so splitting it here would move nothing.
+export const TripDescriptionPanel = lazyWithRetry(() => import('../../components/Trips/TripDescriptionPanel'))
 export const ReservationsPanel = lazyWithRetry(() => import('../../components/Planner/ReservationsPanel'))
 export const PackingListPanel = lazyWithRetry(() => import('../../components/Packing/PackingListPanel'))
 export const TodoListPanel = lazyWithRetry(() => import('../../components/Todo/TodoListPanel'))

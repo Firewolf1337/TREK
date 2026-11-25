@@ -1,6 +1,7 @@
 import type { TranslationStrings } from '../types';
 
 const trip: TranslationStrings = {
+  'trip.tabs.description': 'Beschreibung',
   'trip.tabs.plan': 'Karte',
   'trip.tabs.transports': 'Transport',
   'trip.tabs.reservations': 'Buchungen',
@@ -11,6 +12,10 @@ const trip: TranslationStrings = {
   'trip.tabs.listsShort': 'Listen',
   'trip.tabs.budget': 'Kosten',
   'trip.tabs.files': 'Dateien',
+  'trip.description.empty': 'Noch keine Beschreibung.',
+  'trip.description.add': 'Beschreibung hinzuf\u00fcgen',
+  'trip.description.markdownHint': 'Markdown wird unterst\u00fctzt.',
+  'trip.description.saveError': 'Beschreibung konnte nicht gespeichert werden',
   'trip.loading': 'Reise wird geladen...',
   'trip.loadingPhotos': 'Fotos der Orte werden geladen...',
   'trip.loadingSteps.pack': 'Koffer werden gepackt...',

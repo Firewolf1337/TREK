@@ -7,7 +7,7 @@ import { useCanDo } from '../../store/permissionsStore'
 import { useSettingsStore } from '../../store/settingsStore'
 import { getCached, fetchPhoto } from '../../services/photoService'
 import { useToast } from '../../components/shared/Toast'
-import { Map, Ticket, PackageCheck, Wallet, FolderOpen, Users, Train, Mountain, Route } from 'lucide-react'
+import { Map, Ticket, PackageCheck, Wallet, FolderOpen, Users, Train, Mountain, Route, FileText } from 'lucide-react'
 import { resolvePluginIcon } from '../../components/shared/PluginIcon'
 import { useTranslation } from '../../i18n'
 import { authApi, tripsApi, healthApi, placesApi } from '../../api/client'
@@ -222,6 +222,7 @@ export function useTripPlanner() {
   const replacedTabs = new Set(tripPagePlugins.flatMap(p => p.tripPage?.replaces ?? []))
   const tourTab = tourPlannerTabOf(!!enabledAddons.tours, isMobile, largeTouch)
   const TRIP_TABS = [
+    { id: 'beschreibung', label: t(TRIP_TAB_LABEL_KEYS.beschreibung), icon: FileText },
     { id: 'plan', label: t(TRIP_TAB_LABEL_KEYS.plan), icon: Map },
     ...(tourTab ? [{ id: 'tour-planner', label: t(TRIP_TAB_LABEL_KEYS['tour-planner']), icon: Mountain, desktopOnly: tourTab.desktopOnly }] : []),
     { id: 'transports', label: t(TRIP_TAB_LABEL_KEYS.transports), icon: Train },
