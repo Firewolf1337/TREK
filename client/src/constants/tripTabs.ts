@@ -33,7 +33,7 @@ export type TripTabId = (typeof TRIP_TAB_IDS)[number]
  * time a tab is renamed.
  */
 export const TRIP_TAB_LABEL_KEYS: Record<TripTabId, string> = {
-  beschreibung: 'trip.tabs.beschreibung',
+  beschreibung: 'trip.tabs.description',
   plan: 'trip.tabs.plan',
   'tour-planner': 'trip.tabs.tourPlanner',
   roadtrip: 'roadtrip.title',
