@@ -1,7 +1,7 @@
 import type { TranslationStrings } from '../types';
 
 const trip: TranslationStrings = {
-  'trip.tabs.beschreibung': 'Description',
+  'trip.tabs.description': 'Description',
   'trip.tabs.plan': 'Plan',
   'trip.tabs.transports': 'Transports',
   'trip.tabs.reservations': 'Bookings',
