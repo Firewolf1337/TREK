@@ -56,7 +56,7 @@ export default function TripDescriptionPanel({ trip, canEdit, onSave }: TripDesc
     <div className="mx-auto w-full max-w-[760px] py-6">
       <div className="mb-4 flex items-center justify-between gap-3">
         <h2 className="m-0 text-content" style={{ ...fs(18, 'subtitle'), fontWeight: 600, letterSpacing: '-0.01em' }}>
-          {t('trip.tabs.beschreibung')}
+          {t('trip.tabs.description')}
         </h2>
         {!editing && canEdit && (
           <button type="button" onClick={startEdit} className="bg-surface-tertiary text-content" style={BTN}>
